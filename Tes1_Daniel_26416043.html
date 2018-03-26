@@ -1,73 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" href="jquerymobile/jmobile/jquery.mobile-1.4.5.css"/>
-	<script src="jquerymobile/jmobile/jquery.js"></script>
-	<script src="jquerymobile/jmobile/jquery.mobile-1.4.5.js"></script>
-	<script src="jquerymobile/jmobile/swipelist.js"></script>
-	<link rel="stylesheet" type="text/css" href="jquerymobile/jmobile/swipelist.css">
-	<title></title>
-
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="jquerymobile/jmobile/jquery.mobile-1.4.5.css"/>
+  <script src="jquerymobile/jmobile/jquery.js"></script>
+  <script src="jquerymobile/jmobile/jquery.mobile-1.4.5.js"></script>
+  <script src="jquerymobile/jmobile/swipelist.js"></script>
+  <link rel="stylesheet" type="text/css" href="jquerymobile/jmobile/swipelist.css">
+  <title></title>
+  <script type="text/javascript">
+    $(window).load(function(){
+$('.navigateToPage').change(function() {
+    var page = $(this).val();
+    $.mobile.changePage( "#"+page, { transition: "slideup"} );
+});
+});
+  </script>
 </head>
 <body>
 
-<div data-role="page" id="win1">
+<div data-role="page" id="home">
 
 	<div data-role="header">
 			<h1>Kalkulator</h1>
-	</div>
-
-
-
-<div data-role="content">
-	<form>
-	<div class="ui-field-contain">
-    <label for="select-native-2">Menu : </label>
-    	<select name="select-native-2" id="select-native-2" data-mini="true">
-     	   <option value="1"><a href="#win1">Kalkulator</a></option>
-     	   <option value="2"><a href="#win2">Warna RGB</a></option>
-     	   <option value="3"><a href="#win3">Rangkuman PPM</a></option>
-   	 	</select>
-	</div>
-</form>
-<!--barbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbar-->
-
-</div>
-
-<div data-role="footer" data-position="fixed">
-			<h1>Kalkulator</h1>
 		</div>
 
+    <div data-role="content">        
+        <label for="pages" class="select">Navigate to page:</label>
+        <select name="pages" id="selectPages" class="navigateToPage">
+           <option>Select a Page</option>
+           <option value="page2">Warna RGB</option>
+           <option value="page3">Rangkuman PPM</option>
+           
+        </select>
+  <!--barbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbar-->
+
+
+
+    </div>
+
+
+
+    <div data-role="footer" data-position="fixed">
+			<h1>Kalkulator</h1>
+		</div>
 </div>
 
 <!-- ----------------------------------------------------------------------- -->
 
-<div data-role="page" id="win2">
+<div data-role="page" id="page2">
 
 	<div data-role="header">
 			<h1>Warna RGB</h1>
-	</div>
+		</div>
 
 
-
-<div data-role="content">
-	<form>
-	<div class="ui-field-contain">
-    <label for="select-native-2">Menu : </label>
-    	<select name="select-native-2" id="select-native-2" data-mini="true">
-     	   <option value="1"><a href="#win1">Kalkulator</a></option>
-     	   <option value="2"><a href="#win2">Warna RGB</a></option>
-     	   <option value="3"><a href="#win3">Rangkuman PPM</a></option>
-   	 	</select>
-	</div>
+    <div data-role="content">        
+        <label for="pages2" class="select">Navigate to page:</label>
+        <select name="pages2" id="selectPages2" class="navigateToPage">
+           <option>Select a Page</option>
+           <option value="home">Kalkulator</option>
+           <option value="page3">Rangkuman PPM</option>
+          
+        </select>
+  <!--barbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbar-->
 
 
-</form>
-<!--barbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbar-->
-
-
-</div>
+    </div>
 
 <div data-role="footer" data-position="fixed">
 			<h1>Warna RGB</h1>
@@ -77,30 +76,25 @@
 
 <!-- ----------------------------------------------------------------------- -->
 
+<div data-role="page" id="page3">
 
-<div data-role="page" id="win3">
-
-	<div data-role="header">
+<div data-role="header">
 			<h1>Rangkuman PPM</h1>
-	</div>
+		</div>
 
 
-
-<div data-role="content">
-	<form>
-	<div class="ui-field-contain">
-    <label for="select-native-2">Menu : </label>
-    	<select name="select-native-2" id="select-native-2" data-mini="true">
-     	   <option value="1"><a href="#win1">Kalkulator</a></option>
-     	   <option value="2"><a href="#win2">Warna RGB</a></option>
-     	   <option value="3"><a href="#win3">Rangkuman PPM</a></option>
-   	 	</select>
-	</div>
-</form>
-<!--barbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbar-->
+    <div data-role="content">        
+        <label for="pages3" class="select">Navigate to page:</label>
+        <select name="pages3" id="selectPages3" class="navigateToPage">
+           <option>Select a Page</option>
+           <option value="home">Kalkulator</option>
+           <option value="page2">Warna RGB</option>           
+           
+        </select>
+  <!--barbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbar-->
 
 
-</div>
+    </div>
 
 <div data-role="footer" data-position="fixed">
 			<h1>Rangkuman PPM</h1>
@@ -108,6 +102,7 @@
 
 </div>
 
+<!-- ----------------------------------------------------------------------- -->
 
 </body>
 </html>

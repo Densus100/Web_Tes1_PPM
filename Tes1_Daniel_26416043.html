@@ -15,6 +15,37 @@ $('.navigateToPage').change(function() {
     $.mobile.changePage( "#"+page, { transition: "slideup"} );
 });
 });
+
+  </script>
+
+  <script type="text/javascript">
+  	$(function(){
+$(document).on('pagebeforeshow', '#calc', function(){       
+    $('#addbtn').on('click', function(){     
+        var num1 = $("#num1").val(), num2 = $("#num2").val();
+        
+        var add =  parseInt(num1) + parseInt(num2) ;
+                
+        // Clear the value if value isn't proper
+        if (add == '0.000' || add == 'Infinity' || add == 'Na N') {
+            add = '';
+        }        
+        
+        storeObject.sum = add;
+        
+        $.mobile.changePage("#add");
+    });    
+});
+
+$(document).on('pagebeforeshow', '#add', function(){       
+    $('#add [data-role="content"]').append('Sum = ' + storeObject.sum);
+});
+
+var storeObject = {
+    sum : null
+}
+
+});
   </script>
 </head>
 <body>
@@ -35,7 +66,13 @@ $('.navigateToPage').change(function() {
         </select>
   <!--barbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbar-->
 
+<br>
+<br>
+<br>
 
+  <input type="text" value="" id="num1"/>
+            <input type="text" value="" id="num2"/>
+            <a data-role="button" id="addbtn">Add numbers</a>
 
     </div>
 
@@ -44,6 +81,9 @@ $('.navigateToPage').change(function() {
     <div data-role="footer" data-position="fixed">
 			<h1>Kalkulator</h1>
 		</div>
+
+<script src="hide.js" type="text/javascript"></script>
+<script src="cal.js" type="text/javascript"></script>
 </div>
 
 <!-- ----------------------------------------------------------------------- -->
@@ -92,6 +132,43 @@ $('.navigateToPage').change(function() {
            
         </select>
   <!--barbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbarbar-->
+  <br>
+  <br>
+  <h1>Rangkuman Materi Git Hub</h1>
+  <p>1. Apabila kita akan membuat Git repository dalam sebuah folder maka ketik "git init" setelah kita ada di dalam folder tersebut</p>
+
+<p>2. Apabila ingin melihat status di Git repository maka ketik "git status". kita dapat melihat mana file yang masih untracked dan mana file yang sudah di staging area</p>
+
+<p>3. Untuk melakukan "save" terhadap perubahan dan memberikan comment pada setiap langkah yang kita lakukan maka ketik "git commit -m "comment"" </p>
+
+<p>4. Untuk menambahkan sebuah file dari untracked ke staging area maka ketik "git add (nama file)", sedangkan untuk menambahkan banyak file yang memiliki format sama maka ketik "git add 'format'"</p>
+
+<p>5. Untuk menghapus sebuah file maka ketik "git rm (nama file)", sedangkan untuk menghapus banyak file yang memiliki format sama maka ketik "git rm 'format'"</p>
+
+<p>6. Untuk melihat history / log mengenai apa saja yang telah kita lakukan maka ketik "git log"</p>
+
+<p>7. Untuk menambahkan alamat dari GitHub repository kedalam local git repository agar dapat di gunakan oleh banyak user maka ketik "git remote add (remote name) https:(web.git)"</p>
+
+<p>8. Jika kita ingin menambahkan perubahan dari local Git repository kita ke dalam GitHub maka ketik "git push -u (remote name) (local branch name)"  
+default dari local branch name adalah master (-u berfungsi agar tidak perlu mengetik ulang remote name dan local branch name, cukup mengetik "git push")</p>
+
+<p>9. Jika ingin menambahkan perubahan dari GitHub ke local Git repository maka ketik "git pull (remote name) (local branch name)"</p>
+
+<p>10. Jika ingin melihat perbedaan dari commit yg sebelumnya maka ketik "git diff HEAD'</p>
+
+<p>11. Jika ingin mengetahui perbedaan file yg masuk ke stagging area di bandingkan commit yang sebelumnya maka ketik "git diff --staged"</p>
+
+<p>12. Apabila ingin menghapus sebuah file dari stagging area maka ketik "git reset (nama file)"</p>
+
+<p>13. Apabila ingin mengembalikan sebuah file ke commit yg sebelumnya maka ketik "git checkout -- (target file)"</p>
+
+<p>14. Apabila ingin membuat branch copy dari branch yang sedang di kerjakan / aktif maka ketik "git branch (nama branch baru)"</p>
+
+<p>15. Untuk menuju ke branch lain agar dapat melakukan perubahan maka ketik "git checkout (nama branch lain)"</p>
+
+<p>16. Untuk melakukan copy dari branch yang lain ke branch yang aktif sekarang maka ketik "git merge (nama branch lain)"</p>
+
+<p>17. Untuk menghapus branch yang lain maka ketik "git branch -d (nama branch lain)"</p>
 
 
     </div>
